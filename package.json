@@ -1,0 +1,22 @@
+{
+  "name": "msvacation",
+  "version": "1.0.0",
+  "description": "Is Meredith on vacation?",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PatrickWeaver/msvacation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PatrickWeaver/msvacation/issues"
+  },
+  "homepage": "https://github.com/PatrickWeaver/msvacation#readme",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
