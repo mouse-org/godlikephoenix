@@ -1,17 +1,29 @@
 var express = require('express'),
   mongoose = require('mongoose');
+  bodyParser = require('body-parser');
 
 
 var db = mongoose.connect('mongodb://localhost/msvacation');
 
 var Vacation = require('./models/vacationModel');
+
 var app = express();
 
 var port = process.env.PORT || 3000;
 
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
+
 var vacationRouter = express.Router();
 
 vacationRouter.route('/vacations')
+  .post(function(req, res){
+    var vacation = new Vacation(req.body);
+    
+    console.log(vacation);
+    res.send(vacation);
+
+  })
   .get(function(req,res){
 
     var query = {};
