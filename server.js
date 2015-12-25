@@ -56,7 +56,7 @@ app.use('/api', vacationRouter);
 
 
 app.get('/', function(req, res){
-  res.send('<div style="font-size: 300px; font-family: sans-serif;">Meredith is on vacation!</div>');
+  res.send('<div style="font-size: 300px; font-family: sans-serif; font-weight: bold;">Meredith is on vacation!</div>');
 });
 
 app.listen(port, function(){
