@@ -14,43 +14,11 @@ var port = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
-var vacationRouter = express.Router();
 
-vacationRouter.route('/vacations')
-  .post(function(req, res){
-    var vacation = new Vacation(req.body);
-    
-    console.log(vacation);
-    res.send(vacation);
+vacationRouter = require('./Routes/vacationRoutes')(Vacation);
 
-  })
-  .get(function(req,res){
 
-    var query = {};
-    if(req.query.place)
-      {
-        query.place = req.query.place;
-      }
-    Vacation.find(query, function(err,vacations){
-      if(err)
-        res.status(500).send(err);
-      else
-        res.json(vacations);
-    });
-  });
-
-vacationRouter.route('/vacations/:vacationId')
-  .get(function(req,res){
-
-    Vacation.findById(req.params.vacationId, function(err,vacation){
-      if(err)
-        res.status(500).send(err);
-      else
-        res.json(vacation);
-    });
-  });
-
-app.use('/api', vacationRouter);
+app.use('/api/vacations', vacationRouter);
 
 
 
