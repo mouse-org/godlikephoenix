@@ -3,7 +3,7 @@ var express = require('express'),
   bodyParser = require('body-parser');
 
 
-var db = mongoose.connect('mongodb://localhost/msvacation');
+var db = mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/msvacation');
 
 var Vacation = require('./models/vacationModel');
 
