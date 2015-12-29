@@ -29,7 +29,14 @@ vacationRouter.use('/:vacationId', function(req,res,next){
 vacationRouter.route('/:vacationId')
   .get(function(req,res){
 
-  	res.json(req.vacation);
+  	var returnVacation = req.vacation.toJSON();
+
+  	returnVacation.links = {};
+  	var newLink = 'http://' + req.headers.host + '/api/vacations/?place=' + returnVacation.place;
+
+  	returnVacation.links.FilterByThisPlace = newLink.replace(' ', '%20');
+
+  	res.json(returnVacation);
     
   })
 

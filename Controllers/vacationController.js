@@ -25,8 +25,17 @@ var vacationController = function(Vacation){
 	    Vacation.find(query, function(err,vacations){
 	      if(err)
 	        res.status(500).send(err);
-	      else
-	        res.json(vacations);
+	      else {
+
+	      	var returnVacations = [];
+	      	vacations.forEach(function(element, index, array){
+	      		var newVacation = element.toJSON();
+	      		newVacation.links =  {};
+	      		newVacation.links.self = 'http://' + req.headers.host + '/api/vacations/' + newVacation._id
+	      		returnVacations.push(newVacation)
+	      	});
+	        res.json(returnVacations);
+	    	}
 	    });
 	}
 

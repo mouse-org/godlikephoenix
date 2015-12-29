@@ -1,9 +1,9 @@
 var should = require('should'),
 	request = require('supertest'),
-	app = (../app.js),
+	app = require('../app.js'),
 	mongoose = require('mongoose'),
 	Vacation = mongoose.model('Vacation'),
-	agent = require.agent(app);
+	agent = request.agent(app);
 
 describe('Vacation Crud Test ', function(){
 	it('Should allow a vacation to be posted and return an _id', function(done){
