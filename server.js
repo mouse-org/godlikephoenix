@@ -34,11 +34,11 @@ var vacationRouter = require('./Routes/vacationRoutes')(Vacation);
 app.use('/api/vacations', vacationRouter);
 
 
-
-
 app.get('/', function(req, res){
-  res.render('index');
+  res.render('index.handlebars');
 });
+
+
 
 app.use('/public', express.static('public'));
 
