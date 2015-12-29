@@ -2,10 +2,10 @@
   "name": "msvacation",
   "version": "1.0.0",
   "description": "Is Meredith on vacation?",
-  "main": "index.js",
+  "main": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",

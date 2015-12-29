@@ -6,7 +6,7 @@ var gulp = require('gulp'),
 
 gulp.task('default', function(){
   nodemon({
-    script: 'app.js',
+    script: 'server.js',
     ext: 'js',
     env: {
       PORT: 8000
@@ -21,7 +21,5 @@ gulp.task('default', function(){
 gulp.task('test', function(){
   env({vars: {ENV:'Test'}});
   gulp.src('Tests/*.js', {read: false})
-    .pipe(gulpMocha({
-      reporter: 'nyan'
-    }))
+    .pipe(gulpMocha({reporter: 'nyan'}))
   });

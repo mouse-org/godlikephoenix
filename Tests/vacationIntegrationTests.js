@@ -1,6 +1,6 @@
 var should = require('should'),
 	request = require('supertest'),
-	app = require('../app.js'),
+	app = require('../server.js'),
 	mongoose = require('mongoose'),
 	Vacation = mongoose.model('Vacation'),
 	agent = request.agent(app);
