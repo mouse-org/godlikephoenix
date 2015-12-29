@@ -2,6 +2,11 @@ var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var exphbs = require('express-handlebars')
+var http = require("http");
+var fs = require("fs");
+var path = require("path");
+var mime = require("mime");
+
 
 var app = express();
 
@@ -41,7 +46,7 @@ app.get('/', function(req, res){
 
 
 
-app.use('/public', express.static('public'));
+app.use('/public', express.static(__dirname + '/public'));
 
 app.listen(port, function(){
   console.log('Gulp is running on PORT: ' + port);
