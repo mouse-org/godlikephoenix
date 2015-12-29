@@ -4,7 +4,7 @@ var routes = function(Vacation){
 
 var vacationRouter = express.Router();
 
-var vacationController = require('../Controllers/vacationController.js')(Vacation)
+var vacationController = require('../controllers/vacationController.js')(Vacation)
 
 vacationRouter.route('/')
   .post(vacationController.post)
