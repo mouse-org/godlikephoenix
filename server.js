@@ -6,6 +6,7 @@ var exphbs = require('express-handlebars')
 var app = express();
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+app.set('views', __dirname + '/views');
 app.set('view engine', 'handlebars');
 
 
@@ -35,7 +36,7 @@ app.use('/api/vacations', vacationRouter);
 
 
 app.get('/', function(req, res){
-  res.render('index.handlebars');
+  res.render('index');
 });
 
 
