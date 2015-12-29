@@ -34,7 +34,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
 
-var vacationRouter = require('./Routes/vacationRoutes')(Vacation);
+var vacationRouter = require('./routes/vacationRoutes')(Vacation);
 
 
 app.use('/api/vacations', vacationRouter);
