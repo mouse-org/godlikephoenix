@@ -31,10 +31,10 @@ vacationRouter.route('/:vacationId')
 
   	var returnVacation = req.vacation.toJSON();
 
-  	returnVacation.links = {};
-  	var newLink = 'http://' + req.headers.host + '/api/vacations/?place=' + returnVacation.place;
+  	// returnVacation.links = {};
+  	// var newLink = 'http://' + req.headers.host + '/api/vacations/?place=' + returnVacation.place;
 
-  	returnVacation.links.FilterByThisPlace = newLink.replace(' ', '%20');
+  	// returnVacation.links.FilterByThisPlace = newLink.replace(' ', '%20');
 
   	res.json(returnVacation);
     

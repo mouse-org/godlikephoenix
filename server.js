@@ -2,10 +2,11 @@ var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var exphbs = require('express-handlebars')
-var http = require("http");
-var fs = require("fs");
-var path = require("path");
-var mime = require("mime");
+var http = require('http');
+var fs = require('fs');
+var path = require('path');
+var mime = require('mime');
+var request = require('request')
 
 
 var app = express();
@@ -26,8 +27,6 @@ else {
 
 var Vacation = require('./models/vacationModel');
 
-
-
 var port = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({extended:true}));
@@ -39,9 +38,36 @@ var vacationRouter = require('./routes/vacationRoutes')(Vacation);
 
 app.use('/api/vacations', vacationRouter);
 
+var apidata;
+var duration;
+
+
+var durationlog = console.log(duration + " <<<")
+
+var vacationfind = function(callback) {
+  Vacation.find({ place: "Palos Verdes"}, function(err, vacation) {
+  if (err) throw err;
+
+  console.log(vacation);
+  apidata = vacation;
+  duration = vacation.duration;
+});
+};
+
+vacationfind(durationlog);
+
+console.log(apidata);
+
+console.log(duration + " <<");
+
 
 app.get('/', function(req, res){
-  res.render('index');
+  res.render('index', {
+    place: apidata[0]["place"],
+    duration: duration,
+    transportation: ''
+
+  });
 });
 
 

@@ -1,5 +1,5 @@
 body {
-    background-image: url("/public/tri.gif");
+    background-image: url("/public/compat.jpg");
     background-repeat: repeat;
     width: 100%;
    	font-family: sans-serif;
@@ -12,7 +12,8 @@ body {
 	line-height: 80%;
 	text-align: center;
 	font-size: 80px;
-	text-shadow: -5px -5px yellow;
+	text-shadow: -5px -5px white;
+	color: #1E90FF;
 
 }
 
@@ -25,7 +26,8 @@ body {
 .fax {
 	font-size: 40px;
 	color: black;
-	text-shadow: -2px -2px silver;
+	text-shadow: -2px -2px 	#0000CD;
+	color: #ADD8E6;
 }
 
 .eighty {
@@ -38,4 +40,22 @@ body {
 a {
 	color: LightBlue;
 	text-shadow: -3px -3px blue;
+}
+
+.v-form {
+
+background:rgba(255,255,255,0.5);
+padding: 20px;
+
+
+}
+
+
+.f-label {
+
+
+}
+
+.f-label-box {
+	font-size: 30px;
 }
