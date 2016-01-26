@@ -61,14 +61,35 @@ console.log(apidata);
 console.log(duration + " <<");
 
 
-app.get('/', function(req, res){
-  res.render('index', {
-    place: apidata[0]["place"],
-    duration: duration,
-    transportation: ''
+date = new Date();
+todayOfTheWeek = date.getDay();
 
+if (todayOfTheWeek > 5) {
+
+  app.get('/', function(req, res){
+  res.render('weekend', {
+    place: '',
+    duration: duration,
+    transportation: 'test',
+    css: 'weekend'
+
+    });
   });
-});
+
+} else {
+
+
+  app.get('/', function(req, res){
+    res.render('index', {
+      place: '',
+      duration: duration,
+      transportation: '',
+      css: 'style'
+
+    });
+  });
+
+};
 
 
 
