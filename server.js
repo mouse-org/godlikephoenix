@@ -65,42 +65,47 @@ console.log(duration + " <<");
 date = new Date();
 todayOfTheWeek = date.getDay();
 
-if (onvacation == true) {
-  app.get('/', function(req, res){
-  res.render('vacation', {
-    place: '',
-    duration: duration,
-    transportation: 'test',
-    css: 'vacation'
 
-    });
-  });
-}  else if (todayOfTheWeek > 5) {
+app.get('/toggle', function(req, res) {
 
-  app.get('/', function(req, res){
-  res.render('weekend', {
-    place: '',
-    duration: duration,
-    transportation: 'test',
-    css: 'weekend'
+  if( onvacation ) {
+    onvacation = false
+  } else {
+    onvacation = true
+  }
 
-    });
+  res.render('thankyou', {
+    css: 'toggle'
   });
 
-} else {
+});
 
 
-  app.get('/', function(req, res){
+app.get('/', function(req, res){
+  if (onvacation == true) {
+    res.render('vacation', {
+      place: '',
+      duration: duration,
+      transportation: 'test',
+      css: 'vacation'
+    });
+  }  else if (todayOfTheWeek > 5) {
+    res.render('weekend', {
+      place: '',
+      duration: duration,
+      transportation: 'test',
+      css: 'weekend'
+    });
+
+  } else {
     res.render('index', {
       place: '',
       duration: duration,
       transportation: '',
       css: 'style'
-
     });
-  });
-
-};
+  };
+});
 
 
 
