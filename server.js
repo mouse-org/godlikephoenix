@@ -40,6 +40,7 @@ app.use('/api/vacations', vacationRouter);
 
 var apidata;
 var duration;
+var onvacation;
 
 
 var durationlog = console.log(duration + " <<<")
@@ -64,7 +65,17 @@ console.log(duration + " <<");
 date = new Date();
 todayOfTheWeek = date.getDay();
 
-if (todayOfTheWeek > 5) {
+if (onvacation == true) {
+  app.get('/', function(req, res){
+  res.render('vacation', {
+    place: '',
+    duration: duration,
+    transportation: 'test',
+    css: 'vacation'
+
+    });
+  });
+}  else if (todayOfTheWeek > 5) {
 
   app.get('/', function(req, res){
   res.render('weekend', {
