@@ -61,7 +61,7 @@ body{
 	min-height: 200px;
 }
 .transportation img, .help img, .home img, .restaurant img, .restroom img, .library img{
-	margin: 35px auto;
+	margin: -100px auto 35px;
 	padding:0 0 0 5%;
 }
 .help{
@@ -87,4 +87,12 @@ body{
 }
 .footer img{
 	display: inline;
+}
+
+
+@media screen and (max-width: 800px) {
+	.transportation img, .help img, .home img, .restaurant img, .restroom img, .library img{
+	margin: 35px auto;
+	padding:0 0 0 5%;
+}
 }
