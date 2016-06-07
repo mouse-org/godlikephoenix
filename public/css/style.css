@@ -1,0 +1,90 @@
+html,body{
+	height:100%;
+	margin:0;
+}
+body{
+	font-family: 'Helvetica', sans-serif;
+	font-weight: lighter;
+}
+.container {
+    height:100%;
+}
+/* home page css */
+.settingsFill{
+	background-color:#480048;
+	width:100%;
+    height:50%;
+    min-width: 100%;
+    min-height:50%;
+    margin:0;
+}
+.settingsFill img{
+	margin: 0 auto;
+}
+.fullHt{
+	position: relative;
+	height: 100%;
+	min-height: 100;
+}
+.keyFill, .micFill{
+	width:50%;
+    min-width: 50%;
+    margin:0;
+    height: auto;
+    height: auto !important;
+    min-height: 100%;
+}
+.keyFill{
+	background-color:#c04848;
+}
+.micFill{
+	background-color:#f07241;		
+}
+.keyFill img, .micFill img{
+	margin: 50% auto;
+}
+.settingsFavFill h2, .settingsFavFill button{
+	display: inline-block;
+	float: left;
+}
+.settingsFavFill h2{
+	width: 50%;
+	color: #fff;
+}
+.settingsFavFill button{
+	margin-top: 6%;
+	margin-left: 25%;
+	background-color: none;
+}
+.favorites div{
+	height:200px;
+	min-height: 200px;
+}
+.transportation img, .help img, .home img, .restaurant img, .restroom img, .library img{
+	margin: 35px auto;
+	padding:0 0 0 5%;
+}
+.help{
+	background-color: #601848;
+}
+.home{
+	background-color:#c04848;
+}
+.transportation{
+	background-color:#f07241;
+}
+.restaurant{
+	background-color:#10303c;
+}
+.restroom{
+	background-color:#80a3b0;
+}
+.library{
+	background-color:#c07b7b;
+}
+.footer{
+	background-color:#480048;
+}
+.footer img{
+	display: inline;
+}
